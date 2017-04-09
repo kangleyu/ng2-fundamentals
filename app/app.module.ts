@@ -10,7 +10,8 @@ import {
   CreateEventComponent,
   EventRouteActivator,
   EventListResolver,
-  EventService
+  EventService,
+  CreateSessionComponent
 } from './events/index';
 
 import { EventsAppComponent } from './events-app-component';
@@ -36,7 +37,8 @@ import { appRoutes } from './routes';
     NavBarComponent,
     EventDetailsComponent,
     CreateEventComponent,
-    Error404Component
+    Error404Component,
+    CreateSessionComponent
   ],
   providers: [
     EventService,
