@@ -5,7 +5,8 @@ import { Router } from '@angular/router';
   templateUrl: 'app/events/create-event.component.html'
 })
 export class CreateEventComponent {
-
+  isDirty: boolean = true;
+  
   constructor(private router: Router) {
 
   }
