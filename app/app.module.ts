@@ -35,7 +35,7 @@ import { AuthService } from './user/auth.service';
 import { appRoutes } from './routes';
 
 declare let toastr: Toastr;
-declare let jQuery: object;
+declare let jQuery: any;
 
 @NgModule({
   imports: [ 
@@ -78,7 +78,6 @@ export class AppModule {
 
 function checkDirtyState(component: CreateEventComponent) {
   if (component.isDirty) {
-    console.log('dirty');
     return window.confirm('You have not saved this event, do you really want to cancel?');
   }
   return true;
