@@ -1,0 +1,48 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/tomyu/.nvm/versions/node/v7.5.0/bin/node',
+1 verbose cli   '/Users/tomyu/.nvm/versions/node/v7.5.0/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'tsc:w' ]
+2 info using npm@4.1.2
+3 info using node@v7.5.0
+4 verbose run-script [ 'pretsc:w', 'tsc:w', 'posttsc:w' ]
+5 info lifecycle ng2-fundamentals-demo@1.0.0~pretsc:w: ng2-fundamentals-demo@1.0.0
+6 silly lifecycle ng2-fundamentals-demo@1.0.0~pretsc:w: no script for pretsc:w, continuing
+7 info lifecycle ng2-fundamentals-demo@1.0.0~tsc:w: ng2-fundamentals-demo@1.0.0
+8 verbose lifecycle ng2-fundamentals-demo@1.0.0~tsc:w: unsafe-perm in lifecycle true
+9 verbose lifecycle ng2-fundamentals-demo@1.0.0~tsc:w: PATH: /Users/tomyu/.nvm/versions/node/v7.5.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/tomyu/Developer/web/angular2/ng2-fundamentals/node_modules/.bin:/Users/tomyu/.nvm/versions/node/v7.5.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/tomyu/Developer/web/angular2/ng2-fundamentals/node_modules/.bin:/Users/tomyu/.rvm/gems/ruby-2.2.4/bin:/Users/tomyu/.rvm/gems/ruby-2.2.4@global/bin:/Users/tomyu/.rvm/rubies/ruby-2.2.4/bin:/Users/tomyu/.nvm/versions/node/v7.5.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/tomyu/.rvm/bin
+10 verbose lifecycle ng2-fundamentals-demo@1.0.0~tsc:w: CWD: /Users/tomyu/Developer/web/angular2/ng2-fundamentals
+11 silly lifecycle ng2-fundamentals-demo@1.0.0~tsc:w: Args: [ '-c', 'tsc -w' ]
+12 silly lifecycle ng2-fundamentals-demo@1.0.0~tsc:w: Returned: code: 1  signal: null
+13 info lifecycle ng2-fundamentals-demo@1.0.0~tsc:w: Failed to exec tsc:w script
+14 verbose stack Error: ng2-fundamentals-demo@1.0.0 tsc:w: `tsc -w`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (/Users/tomyu/.nvm/versions/node/v7.5.0/lib/node_modules/npm/lib/utils/lifecycle.js:279:16)
+14 verbose stack     at emitTwo (events.js:106:13)
+14 verbose stack     at EventEmitter.emit (events.js:192:7)
+14 verbose stack     at ChildProcess.<anonymous> (/Users/tomyu/.nvm/versions/node/v7.5.0/lib/node_modules/npm/lib/utils/spawn.js:40:14)
+14 verbose stack     at emitTwo (events.js:106:13)
+14 verbose stack     at ChildProcess.emit (events.js:192:7)
+14 verbose stack     at maybeClose (internal/child_process.js:890:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+15 verbose pkgid ng2-fundamentals-demo@1.0.0
+16 verbose cwd /Users/tomyu/Developer/web/angular2/ng2-fundamentals
+17 error Darwin 15.6.0
+18 error argv "/Users/tomyu/.nvm/versions/node/v7.5.0/bin/node" "/Users/tomyu/.nvm/versions/node/v7.5.0/bin/npm" "run" "tsc:w"
+19 error node v7.5.0
+20 error npm  v4.1.2
+21 error code ELIFECYCLE
+22 error ng2-fundamentals-demo@1.0.0 tsc:w: `tsc -w`
+22 error Exit status 1
+23 error Failed at the ng2-fundamentals-demo@1.0.0 tsc:w script 'tsc -w'.
+23 error Make sure you have the latest version of node.js and npm installed.
+23 error If you do, this is most likely a problem with the ng2-fundamentals-demo package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     tsc -w
+23 error You can get information on how to open an issue for this project with:
+23 error     npm bugs ng2-fundamentals-demo
+23 error Or if that isn't available, you can get their info via:
+23 error     npm owner ls ng2-fundamentals-demo
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]
