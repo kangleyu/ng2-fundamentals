@@ -15,7 +15,7 @@ import { EventService, ISession, restrictedWords } from "../../events/shared/ind
     .error :ms-input-placeholder { color: #999; }
   `],
 })
-export class CreateSessionComponent implements OnInit {
+export class CreateSessionComponent {
   @Output() saveNewSession = new EventEmitter<ISession>();
   @Output() cancelAddSession = new EventEmitter();
   newSessionForm: FormGroup;

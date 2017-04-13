@@ -6,7 +6,6 @@ import {
   EventDetailsComponent,
   EventListResolver,
   EventResolver,
-  EventRouteActivator,
   EventsListComponent,
 } from "./events/index";
 

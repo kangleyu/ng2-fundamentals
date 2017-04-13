@@ -1,9 +1,9 @@
 import "rxjs/add/observable/of";
 import "rxjs/add/observable/throw";
 
-import "rxjs/add/oprator/catch";
-import "rxjs/add/oprator/do";
-import "rxjs/add/oprator/filter";
-import "rxjs/add/oprator/map";
+import "rxjs/add/operator/catch";
+import "rxjs/add/operator/do";
+import "rxjs/add/operator/filter";
+import "rxjs/add/operator/map";
 
 
