@@ -28,6 +28,11 @@ export class AuthService {
   updateCurrentUser(firstName: string, lastName: string) {
     this.currentUser.firstName = firstName;
     this.currentUser.lastName = lastName;
+
+    let headers = new Headers({ 'Content-type': 'application/json' });
+    let options = new RequestOptions({ headers: headers }); 
+
+    return this.http.put(`http://localhost:8809/api/users/${this.currentUser.id}`, JSON.stringify(this.currentUser), options);
   }
 
   isAuthenticated(): boolean {
