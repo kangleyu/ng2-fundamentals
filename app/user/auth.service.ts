@@ -25,6 +25,15 @@ export class AuthService {
       })
   }
 
+  logout() {
+    this.currentUser = undefined;
+
+    let headers = new Headers({ 'Content-type': 'application/json' });
+    let options = new RequestOptions({ headers: headers }); 
+
+    return this.http.post('http://localhost:8809/api/logout', JSON.stringify({}), options);
+  }
+
   updateCurrentUser(firstName: string, lastName: string) {
     this.currentUser.firstName = firstName;
     this.currentUser.lastName = lastName;

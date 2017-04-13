@@ -40,3 +40,9 @@ exports.requiresRole = function(role) {
     }
   }
 }
+
+exports.logout = function(req, res, next) {
+  loggedInUser = undefined;
+  req.logout();
+  res.end();
+}

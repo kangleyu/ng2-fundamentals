@@ -57,4 +57,11 @@ export class ProfileComponent implements OnInit {
   validateLastName() {
     return this.lastName.valid || this.lastName.untouched;
   }
+
+  logout() {
+    this.authService.logout().subscribe(() => {
+      this.toastr.success('Logout successfully!');
+      this.router.navigate(['/events']);
+    })
+  }
 }

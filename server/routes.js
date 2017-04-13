@@ -19,10 +19,7 @@ module.exports = function(app) {
   app.delete('/api/events/:eventId/sessions/:sessionId/voters/:voterId', events.deleteVoter);
   app.post('/api/events/:eventId/sessions/:sessionId/voters/:voterId', events.addVoter);
   
-  app.post('/api/logout', function(req, res) {
-    req.logout();
-    res.end();
-  });
+  app.post('/api/logout', auth.logout);
   
   app.get('/app/*', function(req, res) {
     res.sendStatus(404);
