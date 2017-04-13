@@ -31,30 +31,10 @@ export class EventService {
       }).catch(this.handleError);
   }
 
-  updateEvent(event) {
-    let index = EVENTS.findIndex(x => x.id === event.id);
-    EVENTS[index] = event;
-  }
-
   searchSessions(searchTerm: string) {
-    var term = searchTerm.toLocaleLowerCase();
-    var results: ISession[] = [];
-
-    EVENTS.forEach(event => {
-      var matchingSessions = event.sessions.filter(session => session.name.toLocaleLowerCase().indexOf(term) > -1)
-      matchingSessions = matchingSessions.map((session:any) => {
-        session.eventId = event.id;
-        return session;
-      })
-
-      results = results.concat(matchingSessions);
-    });
-    
-    var emitter = new EventEmitter(true);
-    setTimeout(() => {
-      emitter.emit(results);
-    }, 100);
-    return emitter;
+    return this.http.get('http://localhost:8809/api/sessions/search?search=' + searchTerm).map((response: Response )=> {
+      return response.json()
+    }).catch(this.handleError);
   }
 
   private handleError(error: Response) {
