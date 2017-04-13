@@ -9,7 +9,7 @@ export interface IEvent {
     address: string;
     city: string;
     country: string;
-  },
+  };
   onlineUrl?: string;
   sessions: ISession[];
 }

@@ -1,54 +1,55 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from "@angular/platform-browser";
+import { RouterModule } from "@angular/router";
 
 import {
-  EventsListComponent,
-  EventThumbnailComponent,
-  EventDetailsComponent,
   CreateEventComponent,
+  CreateSessionComponent,
+  DurationPipe,
+  EventDetailsComponent,
   EventListResolver,
   EventResolver,
   EventService,
-  CreateSessionComponent,
+  EventsListComponent,
+  EventThumbnailComponent,
+  LocationValidator,
   SessionListComponent,
-  DurationPipe,
   UpvoteComponent,
   VoterService,
-  LocationValidator
-} from './events/index';
+} from "./events/index";
 
-import { EventsAppComponent } from './events-app-component';
-import { NavBarComponent } from './nav/navbar.component';
-import { Error404Component } from './errors/404.service';
+import { Error404Component } from "./errors/404.service";
+import { EventsAppComponent } from "./events-app-component";
+import { NavBarComponent } from "./nav/navbar.component";
 
-import { 
-  TOASTR_TOKEN, 
-  Toastr, 
-  JQ_TOKEN, 
+import {
   CollapsibleWellComponent,
+  JQ_TOKEN,
+  ModalTriggerDirective,
   SimpleModalComponent,
-  ModalTriggerDirective
-} from './common/index';
-import { AuthService } from './user/auth.service';
+  Toastr,
+  TOASTR_TOKEN,
+} from "./common/index";
+import { AuthService } from "./user/auth.service";
 
-import { appRoutes } from './routes';
+import { appRoutes } from "./routes";
 
-declare let toastr: Toastr;
-declare let jQuery: any;
+declare const toastr: Toastr;
+declare const jQuery: any;
 
 @NgModule({
-  imports: [ 
-    BrowserModule, 
+  imports: [
+    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
   ],
-  declarations: [ 
-    EventsAppComponent, 
+  // tslint:disable-next-line:object-literal-sort-keys
+  declarations: [
+    EventsAppComponent,
     EventsListComponent,
     EventThumbnailComponent,
     NavBarComponent,
@@ -62,7 +63,7 @@ declare let jQuery: any;
     SimpleModalComponent,
     ModalTriggerDirective,
     UpvoteComponent,
-    LocationValidator
+    LocationValidator,
   ],
   providers: [
     EventService,
@@ -72,17 +73,17 @@ declare let jQuery: any;
     EventResolver,
     AuthService,
     VoterService,
-    { provide: 'canDeactiveCreateEvent', useValue: checkDirtyState }
+    { provide: "canDeactiveCreateEvent", useValue: checkDirtyState },
   ],
-  bootstrap: [ EventsAppComponent ]
+  bootstrap: [ EventsAppComponent ],
 })
 export class AppModule {
-  
+
 }
 
 function checkDirtyState(component: CreateEventComponent) {
   if (component.isDirty) {
-    return window.confirm('You have not saved this event, do you really want to cancel?');
+    return window.confirm("You have not saved this event, do you really want to cancel?");
   }
   return true;
 }

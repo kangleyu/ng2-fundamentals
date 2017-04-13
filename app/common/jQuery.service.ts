@@ -1,3 +1,3 @@
-import { OpaqueToken, Inject } from '@angular/core';
+import { Inject, OpaqueToken } from "@angular/core";
 
-export let JQ_TOKEN = new OpaqueToken('jQuery');
+export let JQ_TOKEN = new OpaqueToken("jQuery");
