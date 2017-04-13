@@ -1,4 +1,5 @@
 var passport = require('passport');
+var loggedInUser;
 
 // super important that you use "username" in the body.
 exports.authenticate = function(req, res, next) {
@@ -8,6 +9,7 @@ exports.authenticate = function(req, res, next) {
     if(!user) { res.sendStatus(403); }
     req.logIn(user, function(err) {
       if(err) {return next(err);}
+      loggedInUser = user;
       res.send({success:true, user: user});
     })
   })
@@ -15,7 +17,7 @@ exports.authenticate = function(req, res, next) {
 };
 
 exports.getCurrentIdentity = function(req, res, next) {
-  res.status(200).send(req.user);
+  res.status(200).send(loggedInUser ? loggedInUser : {});
   res.end();
 }
 
